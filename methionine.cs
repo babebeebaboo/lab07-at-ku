@@ -78,14 +78,17 @@ namespace lab07
                 }
             }
             int numberofMET = 0;
+            int numberofMETis1 = 0;
             for (int i = 0; i < numberPerson; i++)
             {
                 Console.WriteLine("Person{1} : {0} Met", QOM[i], i + 1);
                 if (QOM[i] > 1) numberofMET++;
+                if (QOM[i] == 1) numberofMETis1++;
             }
             double NCR = ncr(numberofMET, 2);
-            if (NCR == 0) Console.WriteLine("Have no Good Couple");
-            else Console.WriteLine("Have {0} Good Couple", NCR);
+            double NCRis1 = ncr(numberofMETis1, 2);
+            if (NCR+NCRis1 == 0) Console.WriteLine("Have no Good Couple");
+            else Console.WriteLine("Have {0} Good Couple", NCR+NCRis1);
         }
         static double ncr(int n, int r)
         {
