@@ -22,7 +22,6 @@ namespace lab07
             int[] intinput = new int[nb];
             for (int i = 0; i < nb; i++)intinput[i]=int.Parse(input[i]);
             Array.Sort(intinput);
-            //for (int i = 0; i < nb; i++) Console.WriteLine(intinput[i]);
             Console.WriteLine("Max = {0}",intinput[nb-1]);
             Console.WriteLine("Min = {0}",intinput[0]);
             for (int i = 0; i < nb; i++) sum += intinput[i];
@@ -30,7 +29,6 @@ namespace lab07
             int o = 0;
             int modemax = 0;
             Console.Write("Mode = ");
-             
             for(int i = 1; i < nb; i++)
             {
                 int old = intinput[i - 1];
@@ -48,7 +46,6 @@ namespace lab07
                 if (intinput[i] == old)
                 {
                     o++;
-
                     if (o == modemax)
                     {
                         if (printed) Console.Write(",");
@@ -67,7 +64,6 @@ namespace lab07
             {
                 Console.WriteLine("Median = {0:f2}", (double)(intinput[(nb / 2)-1] + intinput[(nb / 2)])/2.0 );
             }
-            //Console.ReadLine();
         }
     }
 }
