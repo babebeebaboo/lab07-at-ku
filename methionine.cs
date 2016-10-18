@@ -1,10 +1,9 @@
-/////////////////////////////////////////////
+﻿/////////////////////////////////////////////
 //NAME: Supakorn Wongsawang                  
 //ID: 5910500147                             
 //PROGRAM: methionine.cs                     
 //DATE: 14 Oct 2016                          
 /////////////////////////////////////////////
-﻿
 using System;
 namespace lab07
 {
@@ -77,18 +76,16 @@ namespace lab07
                     }
                 }
             }
-            int numberofMET = 0;
-            int numberofMETis1 = 0;
+            int[] numberofMET = new int[1000001];
             for (int i = 0; i < numberPerson; i++)
             {
                 Console.WriteLine("Person{1} : {0} Met", QOM[i], i + 1);
-                if (QOM[i] > 1) numberofMET++;
-                if (QOM[i] == 1) numberofMETis1++;
+                if (QOM[i] > 0) numberofMET[QOM[i]]++;
             }
-            double NCR = ncr(numberofMET, 2);
-            double NCRis1 = ncr(numberofMETis1, 2);
-            if (NCR+NCRis1 == 0) Console.WriteLine("Have no Good Couple");
-            else Console.WriteLine("Have {0} Good Couple", NCR+NCRis1);
+            double NCR = 0;
+            for(int i = 0; i < 1000001; i++) if (numberofMET[i] > 0) NCR += ncr(numberofMET[i], 2);
+            if (NCR == 0) Console.WriteLine("Have no Good Couple");
+            else Console.WriteLine("Have {0} Good Couple", NCR );
         }
         static double ncr(int n, int r)
         {
