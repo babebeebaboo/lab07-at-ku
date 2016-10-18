@@ -5,7 +5,6 @@
 //DATE: 13 Oct 2016                          
 /////////////////////////////////////////////
 using System;
-
 namespace lab07
 {
     class Program
